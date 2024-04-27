@@ -7,5 +7,13 @@
 # @param [String] b
 # @param [Integer] n
 def block_concat(_a, _b, _n)
-  nil
+  result = ''
+  ind = 0
+  while ind < _a.length || ind < _b.length
+    result << _a[ind, _n] if ind < _a.length
+    result << _b[ind, _n] if ind < _b.length
+    
+    ind += _n
+  end
+  result
 end

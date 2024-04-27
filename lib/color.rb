@@ -10,5 +10,17 @@
 # @param [Integer] b
 def color(r, g, b)
   # 100.to_s(16) => 64
-  nil
+  r = [[r, 0].max, 255].min
+  g = [[g, 0].max, 255].min
+  b = [[b, 0].max, 255].min
+
+  r = r.to_s(16)
+  g = g.to_s(16)
+  b = b.to_s(16)
+
+  r = "0#{r}" if r.length == 1
+  g = "0#{g}" if g.length == 1
+  b = "0#{b}" if b.length == 1
+
+  (r + g + b).upcase
 end

@@ -7,5 +7,15 @@
 
 # @param [String] s
 def sequence(s)
-  nil
+  leng = 1
+  max_leng = 0
+  s.downcase.each_char.with_index do |char, index|
+    if index < s.length - 1 && char == s[index + 1].downcase
+      leng += 1
+    else
+      leng = 1
+    end
+    max_leng = [max_leng, leng].max
+  end
+  max_leng
 end
